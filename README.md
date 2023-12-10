@@ -42,7 +42,7 @@ Para facilitar la implementación es recomendable añadir todos los selectores e
 Para ejecutar en local los scripts de web scraping se debe utilizar el siguiente comando:
 
 ```bash
-npm run dev
+npm run scrape
 ```
 
 # IMPORTANTE
