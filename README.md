@@ -21,7 +21,7 @@ Este proyecto consiste en un servicio de web scraping desarrollado con Cloudflar
 1. Clona este repositorio:
 
    ```bash
-   git clone https://github.com/polaarts/ciclismo-scrapper.git
+   git clone https://github.com/polaarts/cycling-scrapper.git
     ```
 
 2. Instala las dependencias del proyecto:
