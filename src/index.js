@@ -7,4 +7,5 @@ const getAll = async () => {
   await getAllCrossmountain()
   await getAllDecathlon()
 }
+
 getAll()
