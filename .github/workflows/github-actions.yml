@@ -1,7 +1,5 @@
-name: Github Actions demo
-on: 
-    schedule:
-        - cron: '0 0 * * *'
+name: Cron-job scrapping
+on: [push]
 jobs:
     Explore-GitHub-Actions:
         runs-on: ubuntu-latest
