@@ -3,9 +3,13 @@ import SELECTORS from '../../utils/selectors.js'
 import dataTiendas from '../../utils/data-tiendas.js'
 import { insertProduct } from '../../utils/postgres.js'
 
-export const firstPrice = (precio) => {
+const secondPrice = (precio) => {
   const Precios = precio.split(' ')
-  precio = Precios[0]
+  if (Precios.length > 1) {
+    precio = Precios[1]
+  } else {
+    precio = Precios[0]
+  }
   return precio
 }
 
@@ -16,7 +20,8 @@ export const scrape = (html, tienda) => {
     const rawNombre = $(el).find(SELECTORS.crossmountain.nombre).text()
     const nombre = rawNombre.replace(/[\n\t]+/g, '').trim()
     const rawPrecio = $(el).find(SELECTORS.crossmountain.precio).text()
-    let precio = rawPrecio.replace(/[\n\t]+/g, '').replace('$', '').replace('.', '').replace(',', '').trim()
+    let precio = secondPrice(rawPrecio)
+    precio = precio.replace(/[^\d]/g, '').trim()
     precio = parseInt(precio)
     const imgURL = 'https:' + $(el)
       .find(SELECTORS.crossmountain.imagen.selector)

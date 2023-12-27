@@ -10,7 +10,7 @@ export const scrape = (html, tienda) => {
     const rawNombre = $(el).find(SELECTORS.cincoNorte.nombre).text()
     const nombre = rawNombre.replace(/[\n\t]+/g, '').trim()
     const rawPrecio = $(el).find(SELECTORS.cincoNorte.precio).text()
-    let precio = rawPrecio.replace(/[\n\t]+/g, '').replace('$', '').replace('.', '').replace(',', '').trim()
+    let precio = rawPrecio.replace(/[^\d]/g, '').trim()
     precio = parseInt(precio)
     const imgURL = 'https:' + $(el)
       .find(SELECTORS.cincoNorte.imagen.selector)
