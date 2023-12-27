@@ -23,7 +23,7 @@ export const scrape = (html, tienda) => {
     let precio = secondPrice(rawPrecio)
     precio = precio.replace(/[^\d]/g, '').trim()
     precio = parseInt(precio)
-    const imgURL = 'https:' + $(el)
+    const imgURL = $(el)
       .find(SELECTORS.crossmountain.imagen.selector)
       .attr(SELECTORS.crossmountain.imagen.atributo)
     const URLproducto = dataTiendas.crossmountain.web + $(el)
