@@ -11,7 +11,7 @@ export const scrape = (html, tienda) => {
     const rawPrecio = $(el).find(SELECTORS.decathlon.precio).text()
     let precio = rawPrecio.replace(/[^\d]/g, '').trim()
     precio = parseInt(precio)
-    const imgURL = 'https:' + $(el)
+    const imgURL = $(el)
       .find(SELECTORS.decathlon.imagen.selector)
       .attr(SELECTORS.decathlon.imagen.atributo)
     const URLproducto = dataTiendas.decathlon.web + $(el)
